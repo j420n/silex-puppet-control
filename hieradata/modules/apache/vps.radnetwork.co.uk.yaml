@@ -1,3 +1,0 @@
----
-#The VPS server's role is to serve our web sites and host a database.
-message: "This node is using  hieradata from /hieradata/modules/apache/vps.radnetwork.co.uk.yaml."

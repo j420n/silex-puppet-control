@@ -1,7 +1,0 @@
---
-#The mysql server on VPS needs to listen on all ip adresses.
-message: "This node is using  hieradata from /hieradata/modules/mysql/vps.radnetwork.co.uk.yaml."
-mysql::server::override_options:
-    mysqld:
-        max_connections: 1024
-        bind-address : 0.0.0.0
