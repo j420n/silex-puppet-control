@@ -1,4 +1,5 @@
 ---
+#Beluga common configuration.
 message: "This node is using hieradata from modules/beluga/common.yaml."
 
 beluga::users:
@@ -21,4 +22,14 @@ beluga::users:
         uid      : 5004
         groups   : ['sudo']
         ssh_key  : AAAAB3NzaC1yc2EAAAADAQABAAABAQCb0oQBfctaYbksZQnZp0MWIGtjJTd4o8tQGM3QJb39w31FiYFmXLo8XNLFnfZU1xr6WH2AeaaGtuPI5feemlzyDF58wHL1OSqETPQVqiSBiAz7WfiRl2Bdztu8yVvAEWWUJNDh9wncToa/dmBoMfq5K518iGoyO79NVU7FpzxCH9lSnL9bLHdC6bKXmuqUZ+lWRkTLVyUO9qt70GY58NohVJC15uUJ2tWA2TPl7PUMRvKL6TPjlosViQ8vBjFzWKO0+key8iWebz4Meu+xWJ9KDuH5ro4hSHOuIOduLARdw8DV6bnvTV4K9zC41dVIromNSj3Zwp0TQxOciC6/cg55
+        key_type : ssh-rsa
+    silex:
+        uid      : 5010
+        groups   : ['sudo']
+        ssh_key  : AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ
+        key_type : ssh-rsa
+    jenkins:
+        uid      :  5011
+        groups   : ['sudo']
+        ssh_key  : AAAAB3NzaC1yc2EAAAADAQABAAABAQC2e+S6ZxoWAacGzx2g9NIUwXv1TyWnTPNcvemmdRGrjIg3RifXzOpDnsjNGP6R5xmCEkHPDVPXhq+kBmsYSUiSRXPfhpvgE6HKwQ0d3SUplC8xAC6DLU0efXgJz3BEFhJiYatDrMsbBq1JhYKyDV/Bfj15+scAKFvVbB5u2KMhXSNwi/1tXPOTTRJmJdyC+84XtFtkvV6z+5o2rF1KuS9pEDIfVdRwESxeQA04jXgCPUQb/PG+KTs8IEPgjL0Mq0GSLL65bGPuRWT6MGWt6xZ2T8ViIBDeWqU4kgDCw2iXYruFVYPFwb4TLKIiy4SbGRGbRBALyQHc/D8eKuDWJl5Z
         key_type : ssh-rsa
