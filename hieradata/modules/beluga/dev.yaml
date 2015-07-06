@@ -1,0 +1,65 @@
+---
+#The DEV server hosts multiple drupal development sites which we define here.
+message: "This node is using  hieradata from /hieradata/modules/beluga/dev.yaml."
+
+beluga::params::install_jdk: true
+beluga::params::jre_package: default-jre
+beluga::mysql::admin_password: password
+
+beluga::drupal_sites:
+   silex-consulting.com:
+       # silex-consulting.com drupal 7 site
+       site_owner: jenkins
+       db_user: sc
+       db_name: sc_drupal
+       docroot: /var/www/drupal/silex-consulting.com/current/
+       web_user: www-data
+       web_group: www-data
+       use_make_file: false
+       #The functionalality to build drupal with a drush make file is still in development.
+       #make_file_location: /vagrant/silex-drupal-7_distribution/distro.make
+       site_aliases:
+              - "www.silex-consulting.com"
+
+   silexresources.co.uk:
+        # silexresources.co.uk drupal 7 site
+       site_owner: jenkins
+       db_user: sr
+       db_name: sr_drupal
+       docroot: /var/www/drupal/silexresources.co.uk/current/
+       web_user: www-data
+       web_group: www-data
+       use_make_file: false
+       #The functionalality to build drupal with a drush make file is still in development.
+       #make_file_location: /vagrant/silex-drupal-7_distribution/distro.make
+       site_aliases:
+              - "www.silexresources.co.uk"
+
+   westproperty.co.zw:
+        # westproperty.co.zw drupal 7 site
+       site_owner: jenkins
+       db_user: wp
+       db_name: wp_drupal
+       docroot: /var/www/drupal/westproperty.co.zw/current/
+       web_user: www-data
+       web_group: www-data
+       use_make_file: false
+       #The functionalality to build drupal with a drush make file is still in development.
+       #make_file_location: /vagrant/silex-drupal-7_distribution/distro.make
+       site_aliases:
+              - "www.westproperty.co.zw"
+
+   westgroup.co.zw:
+        # westgroup.co.zw drupal 7 site
+       site_owner: jenkins
+       db_user: wg
+       db_name: wg_drupal
+       docroot: /var/www/drupal/westgroup.co.zw/current/
+       web_user: www-data
+       web_group: www-data
+       use_make_file: false
+       #The functionalality to build drupal with a drush make file is still in development.
+       #make_file_location: /vagrant/silex-drupal-7_distribution/distro.make
+       site_aliases:
+              - "www.westgroup.co.zw"
+
