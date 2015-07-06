@@ -1,0 +1,13 @@
+---
+#The VPS server hosts multiple drupal site which we define here.
+message: "This node is using  hieradata from /hieradata/nodes/debian8-xen.radnetwork.co.uk.yaml."
+#######################
+#INCLUDE NODE CLASSES#
+#######################
+classes:
+    - 'beluga::params'
+    - 'openldap::server'
+    - 'phpldapadmin'
+
+#TODO move these to a module folder
+

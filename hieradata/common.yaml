@@ -1,0 +1,8 @@
+---
+message: "This node is using hieradata from common.yaml."
+########################
+#INCLUDE COMMON CLASSES#
+########################
+classes:
+    - 'profile::default'
+

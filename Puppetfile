@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'beluga',
+    :git => 'https://github.com/j420n/puppet-beluga.git'
+
+mod 'apache',
+    :git => 'https://github.com/SilexConsulting/puppetlabs-apache.git'
+
+mod 'nginx',
+    :git => 'https://github.com/SilexConsulting/puppet-nginx.git'
+
+mod 'postgresql',
+    :git => 'https://github.com/SilexConsulting/puppetlabs-postgresql.git'
+
+mod 'concat',
+    :git => 'https://github.com/Puppetlabs/puppetlabs-concat.git',
+    :ref => '1.1.1'
+
+mod 'jenkins',
+    :git => 'https://github.com/jenkinsci/puppet-jenkins.git'
+
+mod 'mysql',
+    :git => 'https://github.com/Puppetlabs/puppetlabs-mysql.git'
+
+mod 'stdlib',
+    :git => 'https://github.com/Puppetlabs/puppetlabs-stdlib.git',
+    :ref => '4.2.1'
+
+mod 'apt',
+    :git => 'https://github.com/Puppetlabs/puppetlabs-apt'
+
+mod 'composer',
+    :git => 'https://github.com/SilexConsulting/puppet-composer.git'
+
+mod 'wget',
+    :git => 'https://github.com/SilexConsulting/puppet-wget.git'
+
+mod 'postfix',
+    :git => 'https://github.com/SilexConsulting/puppet-postfix.git'
+
+mod 'vcsrepo',
+    :git => 'https://github.com/Puppetlabs/puppetlabs-vcsrepo.git'
+
+mod 'haproxy',
+    :git => 'https://github.com/puppetlabs/puppetlabs-haproxy.git'
+
+mod 'docker',
+    :git => 'https://github.com/garethr/garethr-docker.git'
+
+mod 'varnish',
+    :git => 'https://github.com/SilexConsulting/puppet-varnish.git'
+
+mod 'drush',
+    :git => 'https://github.com/jonhattan/puppet-drush.git'

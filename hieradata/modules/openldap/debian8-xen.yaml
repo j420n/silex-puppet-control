@@ -1,0 +1,7 @@
+---
+openldap::server::database:
+     'dc=radnetwork,dc=co,dc=uk':
+         ensure : present
+         directory : /var/lib/ldap
+         rootdn : cn=admin,dc=radnetwork,dc=co,dc=uk
+         rootpw : secret
