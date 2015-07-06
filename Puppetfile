@@ -55,3 +55,7 @@ mod 'varnish',
 
 mod 'drush',
     :git => 'https://github.com/jonhattan/puppet-drush.git'
+
+mod 'java',
+    :git => 'https://github.com/puppetlabs/puppetlabs-java.git'
+
