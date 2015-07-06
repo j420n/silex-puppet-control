@@ -1,0 +1,30 @@
+---
+#The VPS server hosts multiple drupal site which we define here.
+message: "This node is using  hieradata from /hieradata/nodes/dev.radnetwork.co.uk.yaml."
+########################
+#INCLUDE COMMON CLASSES#
+########################
+classes:
+    - 'beluga::params'
+    - 'beluga::mysql_server'
+    - 'beluga::java'
+    - 'beluga::drush_server'
+    - 'nginx'
+    - 'jenkins'
+
+#Jenkins plugin hash is set here instead of in the jenkins module hieradata directory.
+jenkins::plugins:
+    'job-import-plugin':
+        source: "https://updates.jenkins-ci.org/download/plugins/job-import-plugin/1.2/job-import-plugin.hpi"
+    'git':
+        source: 'https://updates.jenkins-ci.org/download/plugins/git/2.3.5/git.hpi'
+    'scm-api':
+        source: 'http://updates.jenkins-ci.org/download/plugins/scm-api/0.2/scm-api.hpi'
+    'credentials':
+        source: 'http://updates.jenkins-ci.org/download/plugins/credentials/1.22/credentials.hpi'
+    'git-client':
+        source: 'https://updates.jenkins-ci.org/download/plugins/git-client/1.17.1/git-client.hpi'
+    'publish-over-ssh':
+        source : 'https://updates.jenkins-ci.org/download/plugins/publish-over-ssh/1.12/publish-over-ssh.hpi'
+
+

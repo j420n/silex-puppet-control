@@ -1,0 +1,11 @@
+---
+#The VPS server hosts multiple drupal site which we define here.
+message: "This node is using  hieradata from /hieradata/nodes/vps.radnetwork.co.uk.yaml."
+########################
+#INCLUDE COMMON CLASSES#
+########################
+classes:
+    - 'beluga::params'
+    - 'beluga::mysql_server'
+    - 'beluga::drush_server'
+    - 'nginx'
