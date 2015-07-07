@@ -4,15 +4,16 @@
     - yaml
 
 :hierarchy:
-    - "modules/%{module_name}/%{fqdn}"
+    - "modules/%{module_name}/%{hostname}"
+        - "modules/%{module_name}/%{role}"
     - "modules/%{module_name}/common"
-    - "nodes/%{fqdn}"
+    - "nodes/%{hostname}"
     - "common"
 
 :yaml:
-    :datadir: '/etc/puppet/hieradata'
+    :datadir: '/etc/puppet/environments/production/hieradata'
 :eyaml:
-    :datadir: '/etc/puppet/hieradata'
+    :datadir: '/etc/puppete/environments/production/hieradata'
     :extension: 'yaml'
 
 :merge_behavior: deeper
