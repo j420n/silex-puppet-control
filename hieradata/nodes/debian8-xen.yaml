@@ -8,6 +8,3 @@ classes:
     - 'beluga::params'
     - 'openldap::server'
     - 'phpldapadmin'
-
-#TODO move these to a module folder
-
