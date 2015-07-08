@@ -62,3 +62,6 @@ mod 'java',
 mod 'openldap',
     :git => 'https://github.com/camptocamp/puppet-openldap.git'
 
+mod 'shellvar',
+    :git => 'https://github.com/hercules-team/augeasproviders_shellvar.git'
+
