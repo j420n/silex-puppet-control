@@ -6,6 +6,7 @@
 #TODO Figure out why the webserver role is not noticed.
 :hierarchy:
     - "%{role}"
+    - "roles/%{role}"
     - "modules/%{module_name}/%{hostname}"
     - "modules/%{module_name}/common"
     - "nodes/%{hostname}"
