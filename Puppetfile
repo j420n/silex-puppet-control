@@ -65,3 +65,6 @@ mod 'openldap',
 mod 'shellvar',
     :git => 'https://github.com/hercules-team/augeasproviders_shellvar.git'
 
+mod 'augeas',
+    :git => 'https://github.com/hercules-team/augeasproviders_core.git'
+
