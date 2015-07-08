@@ -7,5 +7,6 @@ message: "This node is using  hieradata from /hieradata/nodes/vps.radnetwork.co.
 classes:
     - 'beluga::params'
     - 'beluga::mysql_server'
+    - 'beluga::apache_frontend_server'
     - 'beluga::drush_server'
     - 'nginx'

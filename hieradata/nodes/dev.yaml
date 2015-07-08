@@ -8,9 +8,9 @@ classes:
     - 'beluga::params'
     - 'beluga::mysql_server'
     - 'beluga::apache_frontend_server'
-    - 'beluga::java'
     - 'beluga::drush_server'
     - 'nginx'
+    - 'beluga::java'
     - 'jenkins'
 
 #Jenkins plugin hash is set here instead of in the jenkins module hieradata directory.

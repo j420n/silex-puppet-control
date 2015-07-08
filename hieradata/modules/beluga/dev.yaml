@@ -1,7 +1,6 @@
 ---
 #The DEV server hosts multiple drupal development sites which we define here.
 message: "This node is using  hieradata from /hieradata/modules/beluga/dev.yaml."
-
 beluga::params::install_jdk: true
 beluga::params::jre_package: default-jre
 beluga::mysql::admin_password: password
