@@ -4,8 +4,8 @@
     - yaml
 
 :hierarchy:
+    - "roles/%{role}"
     - "modules/%{module_name}/%{hostname}"
-    - "modules/%{module_name}/%{role}"
     - "modules/%{module_name}/common"
     - "nodes/%{hostname}"
     - "common"
