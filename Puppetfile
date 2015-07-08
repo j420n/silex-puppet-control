@@ -59,3 +59,6 @@ mod 'drush',
 mod 'java',
     :git => 'https://github.com/puppetlabs/puppetlabs-java.git'
 
+mod 'openldap',
+    :git => 'https://github.com/camptocamp/puppet-openldap.git'
+
