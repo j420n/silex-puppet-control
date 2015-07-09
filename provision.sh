@@ -78,6 +78,9 @@ echo >&2 "Does this look right?";
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-host
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-port
 
+#Replace certname in puppet.conf.
+sed -i "/certname = */c\certname = $(facter fqdn)" /etc/puppet/puppet.conf
+
 if [ -f /etc/init.d/puppetmaster ];
 then
     echo >&2 "The local Puppet Master has been found. Welcome to the Puppet show.";
