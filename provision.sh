@@ -79,7 +79,7 @@ ln -sf /etc/puppet/silex-puppet-control/puppet.conf /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/puppetdb.conf /etc/puppet/
 
 echo >&2 "Deploying 'MASTER' environment...";
-r10k deploy environment production
+r10k deploy environment master
 
 #Configure Jetty host and port for puppetdb.
 sed -i 's/# host = <host>/host = 127.0.1.1/g' /etc/puppetdb/conf.d/jetty.ini
