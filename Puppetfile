@@ -68,3 +68,7 @@ mod 'shellvar',
 mod 'augeas',
     :git => 'https://github.com/hercules-team/augeasproviders_core.git'
 
+mod 'phpldapadmin',
+    :git => 'https://github.com/Spantree/puppet-phpldapadmin.git'
+
+
