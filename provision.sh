@@ -48,7 +48,7 @@ if [ -d /etc/puppet/silex-puppet-control ];
 then
     echo >&2 "Updating Silex Puppet control.";
     cd /etc/puppet/silex-puppet-control
-    git pull origin production
+    git pull origin master
 fi
 
 #Check if we have already cloned the repo.
@@ -57,9 +57,9 @@ then
     echo >&2 "Cloning the 'Control Repo'";
     cd /etc/puppet
     git clone https://github.com/j420n/silex-puppet-control.git
-    echo >&2 "Checking out 'PRODUCTION' environment branch.";
+    echo >&2 "Checking out 'MASTER' environment branch.";
     cd /etc/puppet/silex-puppet-control
-    git checkout production
+    git checkout master
 fi
 
 echo >&2 "Installing r10k and linking puppet configuration files.";
@@ -78,7 +78,7 @@ ln -sf /etc/puppet/silex-puppet-control/r10k.yaml /etc/
 ln -sf /etc/puppet/silex-puppet-control/puppet.conf /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/puppetdb.conf /etc/puppet/
 
-echo >&2 "Deploying 'PRODUCTION' environment...";
+echo >&2 "Deploying 'MASTER' environment...";
 r10k deploy environment production
 
 #Configure Jetty host and port for puppetdb.
