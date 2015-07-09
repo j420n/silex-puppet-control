@@ -67,11 +67,11 @@ echo >&2 "Installing r10k and linking puppet configuration files.";
 apt-get install r10k -y
 
 #Symlink hiera, puppet and r10k configuration from the control repo.
-rm /etc/puppet/hiera.yaml
-rm /etc/hiera.yaml
-rm /etc/r10k.yaml
-rm /etc/puppet/puppet.conf
-rm /etc/puppet/puppetdb.conf
+rm -f /etc/puppet/hiera.yaml
+rm -f /etc/hiera.yaml
+rm -f /etc/r10k.yaml
+rm -f /etc/puppet/puppet.conf
+rm -f /etc/puppet/puppetdb.conf
 ln -sf /etc/puppet/silex-puppet-control/hiera.yaml /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/hiera.yaml /etc/
 ln -sf /etc/puppet/silex-puppet-control/r10k.yaml /etc/
