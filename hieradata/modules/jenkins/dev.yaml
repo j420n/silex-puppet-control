@@ -1,7 +1,6 @@
 ---
 #The dev server hosts jenkins which we configure here.
-message: "This node is using  hieradata from /hieradata/modules/beluga/dev.radnetwork.co.uk.yaml."
-
+message: "This node is using  hieradata from /hieradata/modules/beluga/dev.yaml."
 jenkins::configure_firewall: false
 jenkins::config_hash:
         HTTP_PORT:

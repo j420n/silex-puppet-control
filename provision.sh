@@ -31,6 +31,18 @@ echo >&2 "Installing git-core and deep_merge.";
 apt-get install git-core hiera-eyaml -y
 gem install deep_merge
 
+#Install some dependencies
+echo >&2 "Creating Keys";
+if [ ! -d /etc/puppet/silex-puppet-control/keys ];
+then
+    mkdir /etc/puppet/silex-puppet-control/keys
+fi
+if [ ! -f /etc/puppet/silex-puppet-control/keys/private_key.pkcs7.pem ];
+then
+    cd /etc/puppet/silex-puppet-control/keys
+    eyaml createkeys
+fi
+
 #Pull any updates.
 if [ -d /etc/puppet/silex-puppet-control ];
 then
@@ -74,6 +86,7 @@ sed -i 's/# host = <host>/host = 127.0.1.1/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/port = 8080/port = 8980/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/# ssl-host = <host>/ssl-host = 0.0.0.0/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/# ssl-port = <port>/ssl-port = 8981/g' /etc/puppetdb/conf.d/jetty.ini
+sed -i 's/ssl-port = 8081/ssl-port = 8981/g' /etc/puppetdb/conf.d/jetty.ini
 echo >&2 "Does this look right?";
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-host
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-port

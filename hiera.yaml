@@ -21,6 +21,5 @@
 :merge_behavior: deeper
 
 # If using the pkcs7 encryptor (default)
-# TODO move to /etc/puppet/secret/keys on Puppetmaster
 :pkcs7_private_key: '/etc/puppet/silex-puppet-control/keys/private_key.pkcs7.pem'
 :pkcs7_public_key:  '/etc/puppet/silex-puppet-control/keys/public_key.pkcs7.pem'

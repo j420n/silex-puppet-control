@@ -1,5 +1,7 @@
 ---
+#The xen server uses phpldapadmin which we configure here.
+message: "This node is using  hieradata from /hieradata/modules/phpldapadmin/debian8-xen.yaml."
 phpldapadmin::ldap_host: localhost
-phpldapadmin::ldap_suffix: dc=radnetwork,dc=co,dc=uk
-phpldapadmin::ldap_bind_id: cn=admin,dc=radnetwork,dc=co,dc=uk
+phpldapadmin::ldap_suffix: dc=local,dc=ghost
+phpldapadmin::ldap_bind_id: cn=admin,dc=local,dc=ghost
 phpldapadmin::ldap_bind_pass: secret

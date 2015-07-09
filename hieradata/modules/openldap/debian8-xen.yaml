@@ -1,7 +1,9 @@
 ---
+#The xen server hosts openldap server which we configure here.
+message: "This node is using  hieradata from /hieradata/modules/openldap/debian8-xen.yaml."
 openldap::server::database:
-     'dc=radnetwork,dc=co,dc=uk':
+     'dc=local,dc=ghost':
          ensure : present
          directory : /var/lib/ldap
-         rootdn : cn=admin,dc=radnetwork,dc=co,dc=uk
+         rootdn : cn=admin,dc=local,dc=ghost
          rootpw : secret
