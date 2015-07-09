@@ -31,18 +31,6 @@ echo >&2 "Installing git-core and deep_merge.";
 apt-get install git-core hiera-eyaml -y
 gem install deep_merge
 
-#Install some dependencies
-echo >&2 "Creating Keys";
-if [ ! -d /etc/puppet/silex-puppet-control/keys ];
-then
-    mkdir /etc/puppet/silex-puppet-control/keys
-fi
-if [ ! -f /etc/puppet/silex-puppet-control/keys/private_key.pkcs7.pem ];
-then
-    cd /etc/puppet/silex-puppet-control/keys
-    eyaml createkeys
-fi
-
 #Pull any updates.
 if [ -d /etc/puppet/silex-puppet-control ];
 then
@@ -60,6 +48,15 @@ then
     echo >&2 "Checking out 'MASTER' environment branch.";
     cd /etc/puppet/silex-puppet-control
     git checkout master
+fi
+
+#Create Keys
+echo >&2 "Creating Keys";
+
+if [ ! -f /etc/puppet/silex-puppet-control/keys/private_key.pkcs7.pem ];
+then
+    cd /etc/puppet/silex-puppet-control/
+    eyaml createkeys
 fi
 
 echo >&2 "Installing r10k and linking puppet configuration files.";
