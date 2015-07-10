@@ -4,6 +4,9 @@ set -e
 #Install Puppet Labs repositories.
 if [ ! -f puppetlabs-release-pc1-wheezy.deb ];
 then
+#TODO Change to jessie repo when puppet 4
+  wget "https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb"
+  dpkg -i puppetlabs-release-pc1-jessie.deb
   wget "https://apt.puppetlabs.com/puppetlabs-release-pc1-wheezy.deb"
   dpkg -i puppetlabs-release-pc1-wheezy.deb
 fi
@@ -35,24 +38,24 @@ then
     git checkout master
 fi
 
-#Test for Puppet Master
-command -v puppet master >/dev/null 2>&1 || {
-                                      echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppetmaster puppetmaster-common puppet-common;
-                                     }
-
 #Test for Puppet Agent.
 command -v puppet >/dev/null 2>&1 || {
                                       echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppet;
+                                      apt-get -y -f install puppet=3.7.2-4;
+                                     }
+
+#Test for Puppet Master
+command -v puppet master >/dev/null 2>&1 || {
+                                      echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
+                                      apt-get -y -f install puppetmaster=3.7.2-4;
                                      }
 
 #Test for PuppetDB
 if [ ! -d /etc/puppetdb ];
 then
     echo >&2 "PuppetDB is required, but it is not installed.  Installing...";
-    apt-get -y install puppetdb;
-    apt-get -y install puppetdb-terminus;
+    apt-get -y install puppetdb=2.3.5-1puppetlabs1;
+    apt-get -y install puppetdb-terminus=2.3.5-1puppetlabs1;
     echo >&2 "PuppetDB is Installed.";
 fi
 
