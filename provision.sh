@@ -44,7 +44,7 @@ command -v puppet master >/dev/null 2>&1 || {
 #Test for Puppet Agent.
 command -v puppet >/dev/null 2>&1 || {
                                       echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppet-agent;
+                                      apt-get -y -f install puppet;
                                      }
 
 #Test for PuppetDB
