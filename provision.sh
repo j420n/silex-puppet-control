@@ -9,27 +9,6 @@ then
 fi
 apt-get update
 
-#Test for Puppet Master
-command -v puppet master >/dev/null 2>&1 || {
-                                      echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppetmaster puppetmaster-common puppet-common;
-                                     }
-
-#Test for Puppet Master
-command -v puppet >/dev/null 2>&1 || {
-                                      echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppet-agent;
-                                     }
-
-#Test for PuppetDB
-if [ ! -d /etc/puppetdb ];
-then
-    echo >&2 "PuppetDB is required, but it is not installed.  Installing...";
-    apt-get -y install puppetdb;
-    apt-get -y install puppetdb-terminus;
-    echo >&2 "PuppetDB is Installed.";
-fi
-
 #Clone our control repo
 cd /etc/puppet
 #Install some dependencies
@@ -54,6 +33,27 @@ then
     echo >&2 "Checking out 'MASTER' environment branch.";
     cd /etc/puppet/silex-puppet-control
     git checkout master
+fi
+
+#Test for Puppet Master
+command -v puppet master >/dev/null 2>&1 || {
+                                      echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
+                                      apt-get -y -f install puppetmaster puppetmaster-common puppet-common;
+                                     }
+
+#Test for Puppet Master
+command -v puppet >/dev/null 2>&1 || {
+                                      echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
+                                      apt-get -y -f install puppet-agent;
+                                     }
+
+#Test for PuppetDB
+if [ ! -d /etc/puppetdb ];
+then
+    echo >&2 "PuppetDB is required, but it is not installed.  Installing...";
+    apt-get -y install puppetdb;
+    apt-get -y install puppetdb-terminus;
+    echo >&2 "PuppetDB is Installed.";
 fi
 
 #Create Keys
