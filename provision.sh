@@ -45,10 +45,11 @@ command -v puppet >/dev/null 2>&1 || {
                                      }
 
 #Test for Puppet Master
-command -v puppet master >/dev/null 2>&1 || {
-                                      echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppetmaster=3.7.2-4;
-                                     }
+if [ ! -f /etc/init.d/puppetmaster ];
+then
+   echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
+   apt-get -y -f install puppetmaster=3.7.2-4;
+fi
 
 #Test for PuppetDB
 if [ ! -d /etc/puppetdb ];
