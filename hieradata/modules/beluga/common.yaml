@@ -3,13 +3,8 @@
 message: "This node is using hieradata from modules/beluga/common.yaml."
 
 beluga::users:
-    vagrant:
-        uid      :  5001
-        groups   : ['sudo']
-        ssh_key  : AAAAB3NzaC1yc2EAAAADAQABAAABAQDZYxnxuMAdur8TFi/xkU8btkWb3PRocLZncihwt6PpH5VMnIYklnoJRpBv3rBmZqoW1ansV6V3y7aQlNERpTe2LQx5Er7n2GxEYf4O0EizYIkSh0VLvRt2MG/IylD9U3mLiszCIX1TiTwn/Mw9yS8nWCgdQoieiagnjx7CFLJYLLokWmXOOcD8mevMYcUvCeaO1iq9vk2OiQp+RU2cmqr20p7j2uuvN3u4XIJcx5U9sgaPhs+/wNtxdPXfMozc5nGwfYP19Or6DaRsIOoLNcZ17vEXLdRL+eWjNjVr6VKMO5oBK75l1Bd4qBlGecCnST67XsrG9rDy2J9M0Bv/IS4Z
-        key_type : ssh-rsa
     jenkins:
-        uid      :  5002
+        uid      :  5001
         groups   : ['sudo']
         ssh_key  : AAAAB3NzaC1yc2EAAAADAQABAAABAQCqjdv6ItxyGtpOlx9r52mA0wIwsvAoGekNPcty66eD/d+f1RjhmfGlOZfEG6G30Wr2spbTQf2rheZLWIpidxC+Ovz6V+vLvPCrnFmWyt/MofsMy7G5bv33B2iOJwnhWg0cnwS8SJSTCKKR8+xwhZs3TAow0jYQFVkaY8NbICqL+jzU82YvCif7rxbkHvGFutKv2mJNZEAlsueTvPPNWsSqhbQ1h1QEykmOkDpswcbjMvSlBhFMUZqLj07KuehTuTo7nm9v6CPCRgfchUcwdMiL4v0PuN19ortxOto+N6BvaN+yctwb+PEbONRT55BJeiaGozZTQ+GEV7MXyDKg4FV1
         key_type : ssh-rsa
