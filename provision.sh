@@ -84,6 +84,7 @@ ln -sf /etc/puppet/silex-puppet-control/hiera.yaml /etc/
 ln -sf /etc/puppet/silex-puppet-control/r10k.yaml /etc/
 ln -sf /etc/puppet/silex-puppet-control/puppet.conf /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/puppetdb.conf /etc/puppet/
+ln -sf /etc/puppet/silex-puppet-control/environment.conf /etc/puppet/
 
 echo >&2 "Deploying 'MASTER' environment...";
 r10k deploy environment master
