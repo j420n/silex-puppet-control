@@ -13,9 +13,9 @@
     - "common"
 
 :yaml:
-    :datadir: '/etc/puppet/environments/master/hieradata'
+    :datadir: "/etc/puppet/environments/%{environment}/hieradata"
 :eyaml:
-    :datadir: '/etc/puppet/environments/master/hieradata'
+    :datadir: "/etc/puppet/environments/%{environment}/hieradata"
     :extension: 'yaml'
 
 :merge_behavior: deeper
