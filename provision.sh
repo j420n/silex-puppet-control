@@ -27,6 +27,12 @@ then
     git pull origin master
 fi
 
+#Test for Puppet Agent.
+command -v puppet >/dev/null 2>&1 || {
+                                      echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
+                                      apt-get -y -f install puppet=3.7.2-4;
+                                     }
+
 #Check if we have already cloned the repo.
 if [ ! -d /etc/puppet/silex-puppet-control ];
 then
@@ -37,12 +43,6 @@ then
     cd /etc/puppet/silex-puppet-control
     git checkout master
 fi
-
-#Test for Puppet Agent.
-command -v puppet >/dev/null 2>&1 || {
-                                      echo >&2 "Puppet Agent is required, but it is not installed.  Installing...";
-                                      apt-get -y -f install puppet=3.7.2-4;
-                                     }
 
 #Test for Puppet Master
 if [ ! -f /etc/init.d/puppetmaster ];
