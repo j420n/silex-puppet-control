@@ -5,6 +5,7 @@ message: "This node is using hieradata from /hieradata/nodes/dev.yaml."
 #INCLUDE COMMON CLASSES#
 ########################
 classes:
+    - 'profile::dev'
     - 'beluga::params'
     - 'beluga::mysql_server'
     - 'beluga::apache_frontend_server'
