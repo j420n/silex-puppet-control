@@ -71,4 +71,9 @@ mod 'augeas',
 mod 'phpldapadmin',
     :git => 'https://github.com/Spantree/puppet-phpldapadmin.git'
 
+mod 'mcollective',
+    :git => 'https://github.com/puppet-community/puppet-mcollective.git'
+    
+
+
 
