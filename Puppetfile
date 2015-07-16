@@ -73,7 +73,9 @@ mod 'phpldapadmin',
 
 mod 'mcollective',
     :git => 'https://github.com/puppet-community/puppet-mcollective.git'
-    
+
+mod 'datacat',
+    :git => 'https://github.com/richardc/puppet-datacat.git'
 
 
 
