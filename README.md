@@ -14,9 +14,27 @@ Silex Puppet Control
 
 >To test this out you could use our [debian8-xen] repo which will deploy a base system for this control repo.
 >
->All you need to do is "git clone [debian8-xen]" and "vagrant up".
->If that doesn't work try install git and vagrant.
->If that does not work, please open a pull request!
+>All you need to do is:
+    git clone [debian8-xen]
+    cd vagrant-debian8-xen
+    vagrant up
+
+>If that doesn't work try install git/vagrant.
+>If that does not work, please open a pull request after fixing the problem ;-) !
 >Thanks for Reading.
 
-[debian8-xen]: https://github.com/j420n/vagrant-debian8-xen.git
+###To Change from the vagrant environment to production you can run the following.
+
+    sed -i "/vagrant/c\production" /etc/puppet/silex-puppet-control/provision.sh
+    sed -i "/vagrant/c\production" /etc/puppet/silex-puppet-control/environment.conf
+    sed -i "/vagrant/c\production"/etc/puppet/silex-puppet-control/puppet.conf
+
+>After running the above commands, you will need to commit the changes in a new branch named after you environment:
+
+    git commit -am "Updates for new production environment branch."
+    git branch production
+    git push origin production
+    ./provision.sh
+    OR
+    r10k deploy environment production
+    service puppetmaster restart
