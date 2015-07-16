@@ -6,7 +6,10 @@ message: "This node is using hieradata from /hieradata/nodes/debian8-xen.yaml."
 ######################
 classes:
     - 'profile::xen'
-    - 'mcollective'
     - 'beluga::params'
+    - 'mcollective'
     - 'openldap::server'
     - 'phpldapadmin'
+
+
+

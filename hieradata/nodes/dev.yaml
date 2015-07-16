@@ -10,10 +10,14 @@ classes:
     - 'beluga::mysql_server'
     - 'beluga::apache_frontend_server'
     - 'beluga::drush_server'
-    - 'nginx'
     - 'beluga::java'
-    - 'jenkins'
     - 'docker'
+    - 'jenkins'
+    - 'mcollective'
+    - 'nginx'
+
+#Only install the mcollective client.
+mcollective::client: true
 
 #Docker configuration. Images can be found at https://registry.hub.docker.com/search?q=library
 docker::service_name: 'docker'

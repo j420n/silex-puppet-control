@@ -10,7 +10,11 @@ classes:
     - 'beluga::mysql_server'
     - 'beluga::apache_frontend_server'
     - 'beluga::drush_server'
+    - 'mcollective'
     - 'nginx'
+
+#Only install the mcollective client.
+mcollective::client: true
 
 #Beluga Drupal production sites.
 beluga::drupal_sites:

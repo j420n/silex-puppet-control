@@ -1,9 +1,8 @@
 #The web server role hosts multiple drupal site which we define here.
 message: "This node is using  hieradata from modules/beluga/webserver.yaml."
-
 beluga::drupal_sites:
    silex-puppet-control.example:
-       # silex-consulting.com drupal 7 site
+       #silex-puppet-control.example site
        site_owner: jenkins
        db_user: sc
        db_name: sc_drupal
