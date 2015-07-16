@@ -13,6 +13,18 @@ classes:
     - 'nginx'
     - 'beluga::java'
     - 'jenkins'
+    - 'docker'
+
+#Docker configuration. Images can be found at https://registry.hub.docker.com/search?q=library
+docker::tcp_bind: 'tcp://127.0.0.1:4243'
+docker::socket_bind: 'unix:///var/run/docker.sock'
+docker::images:
+    debian:
+        image_tag: '8.1'
+docker::run_instance:
+    helloworld:
+        image: 'debian:8.1'
+        command: '/bin/sh -c "while true; do echo hello world; sleep 1; done"'
 
 #Jenkins plugin hash is set here instead of in the jenkins module hieradata directory.
 jenkins::plugins:
