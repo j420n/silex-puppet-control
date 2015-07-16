@@ -16,6 +16,7 @@ classes:
     - 'docker'
 
 #Docker configuration. Images can be found at https://registry.hub.docker.com/search?q=library
+docker::service_name: 'docker'
 docker::tcp_bind: 'tcp://127.0.0.1:4243'
 docker::socket_bind: 'unix:///var/run/docker.sock'
 docker::images:
