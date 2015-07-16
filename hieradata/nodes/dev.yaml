@@ -18,6 +18,8 @@ classes:
 
 #Only install the mcollective client.
 mcollective::client: true
+mcollective::middleware_hosts:
+    - 'debian8-xen.local.ghost'
 
 #Docker configuration. Images can be found at https://registry.hub.docker.com/search?q=library
 docker::service_name: 'docker'
