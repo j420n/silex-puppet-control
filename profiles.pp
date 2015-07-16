@@ -3,12 +3,14 @@
 #Include classes with hiera.
 hiera_include('classes')
 
+#DEFAULT PROFILE
 #Create a default class for all nodes.
 class profile::default {
   #This is only used to include "Dynamic configuration" created with hiera.
   notify { "The profile::default class is included by 'default'.": withpath => true }
 }
 
+#XEN PROFILE
 class profile::xen {
   notify { "The profile::xen class installs a few packages to get started with a Xen Linux System.": withpath => true }
   notify { "To make full use of the Xen Linux System, You will need to reboot and load the Xen kernel.":}
@@ -32,10 +34,12 @@ class profile::xen {
   }
 }
 
+#DEV PROFILE
 class profile::dev {
   notify { "The profile::dev class is un-used, All the configuration is set with hiera.": withpath => true }
 }
 
+#VPS PROFILE
 class profile::vps {
   notify { "The profile::vps class is un-used, All the configuration is set with hiera.": withpath => true }
 }
