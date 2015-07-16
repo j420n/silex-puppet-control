@@ -10,7 +10,15 @@ then
   wget "https://apt.puppetlabs.com/puppetlabs-release-pc1-wheezy.deb"
   dpkg -i puppetlabs-release-pc1-wheezy.deb
 fi
+
+#INSTALL DOCKER MANUALLY AS IT IS NOT AVAILABLE IN DEBIAN 8 yet. https://lists.debian.org/debian-release/2015/03/msg00685.html
+#Replace incorrect sources url which is created by puppet docker module.
+#sed -i "/deb https:\/\/get.docker.com\/ubuntu docker main*/c\deb http:\/\/http.debian.net\/debian jessie-backports main" /etc/apt/sources.list.d/docker.list
+
 apt-get update
+
+#Install docker.io using jessie-backports
+#apt-get -t jessie-backports install "docker.io"
 
 #Clone our control repo
 cd /etc/puppet
