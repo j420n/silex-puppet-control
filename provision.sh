@@ -32,7 +32,7 @@ if [ -d /etc/puppet/silex-puppet-control ];
 then
     echo >&2 "Updating Silex Puppet control.";
     cd /etc/puppet/silex-puppet-control
-    git pull origin vagrant
+    git pull origin production
 fi
 
 #Test for Puppet Agent.
@@ -47,9 +47,9 @@ then
     echo >&2 "Cloning the 'Control Repo'";
     cd /etc/puppet
     git clone https://github.com/j420n/silex-puppet-control.git
-    echo >&2 "Checking out 'VAGRANT' environment branch.";
+    echo >&2 "Checking out 'PRODUCTION' environment branch.";
     cd /etc/puppet/silex-puppet-control
-    git checkout vagrant
+    git checkout production
 fi
 
 #Test for Puppet Master
@@ -94,8 +94,8 @@ ln -sf /etc/puppet/silex-puppet-control/puppet.conf /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/puppetdb.conf /etc/puppet/
 ln -sf /etc/puppet/silex-puppet-control/environment.conf /etc/puppet/
 
-echo >&2 "Deploying 'VAGRANT' environment...";
-r10k deploy environment vagrant
+echo >&2 "Deploying 'PRODUCTION' environment...";
+r10k deploy environment production
 
 #Configure Jetty host and port for puppetdb.
 sed -i 's/# host = <host>/host = 127.0.1.1/g' /etc/puppetdb/conf.d/jetty.ini

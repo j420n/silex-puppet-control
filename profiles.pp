@@ -6,7 +6,7 @@ hiera_include('classes')
 #DEFAULT PROFILE
 #Create a default class for all nodes.
 class profile::default {
-  #This is only used to include "Dynamic configuration" created with hiera.
+  #This is only used to ensure "Dynamic configuration" created with hiera.
   notify { "The profile::default class is included by 'default'.": withpath => true }
 }
 
