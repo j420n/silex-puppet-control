@@ -38,3 +38,5 @@ Silex Puppet Control
     OR
     r10k deploy environment <branch name>
     service puppetmaster restart
+
+[debian8-xen]: https://github.com/j420n/vagrant-debian8.git
