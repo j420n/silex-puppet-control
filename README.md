@@ -12,11 +12,11 @@ Silex Puppet Control
     chmod u+x ./provision.sh
     ./provision-dev.sh
 
->To test this out you could use our [debian8-xen] repo which will deploy a base system for this control repo.
+>To test this out you could use our [vagrant-debian8] repo which will deploy a base system for this control repo.
 >
 >All you need to do is:
-    git clone [debian8-xen]
-    cd vagrant-debian8-xen
+    git clone [vagrant-debian8]
+    cd vagrant-debian8
     vagrant up
 
 >If that doesn't work try install git/vagrant.
@@ -39,4 +39,4 @@ Silex Puppet Control
     r10k deploy environment <branch name>
     service puppetmaster restart
 
-[debian8-xen]: https://github.com/j420n/vagrant-debian8.git
+[vagrant-debian8]: https://github.com/j420n/vagrant-debian8.git
