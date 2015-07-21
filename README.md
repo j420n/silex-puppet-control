@@ -8,7 +8,7 @@ Silex Puppet Control
 >Unless you have the Marionette Collective do that for you instead.
 >Well, actually 3 on the first run.
 
-    curl -O https://raw.githubusercontent.com/j420n/silex-puppet-control/master/provision.sh > provision.sh
+    curl -O https://raw.githubusercontent.com/j420n/silex-puppet-control/production/provision.sh > provision.sh
     chmod u+x ./provision.sh
     ./provision-dev.sh
 
@@ -23,18 +23,18 @@ Silex Puppet Control
 >If that does not work, please open a pull request after fixing the problem ;-) !
 >Thanks for Reading.
 
-###To Change from the vagrant environment to production you can run the following.
+###To Change from production to a new environment you can run the following.
 
-    sed -i "/vagrant/c\production" /etc/puppet/silex-puppet-control/provision.sh
-    sed -i "/vagrant/c\production" /etc/puppet/silex-puppet-control/environment.conf
-    sed -i "/vagrant/c\production"/etc/puppet/silex-puppet-control/puppet.conf
+    sed -i "/production/c\<branch name>" /etc/puppet/silex-puppet-control/provision.sh
+    sed -i "/production/c\<branch name>" /etc/puppet/silex-puppet-control/environment.conf
+    sed -i "/production/c\<branch name>"/etc/puppet/silex-puppet-control/puppet.conf
 
->After running the above commands, you will need to commit the changes in a new branch named after you environment:
+>After running the above commands, you will need to commit the changes in a new branch named after your environment:
 
-    git commit -am "Updates for new production environment branch."
-    git branch production
-    git push origin production
+    git commit -am "Updates for new <branch name> environment branch."
+    git branch <branch name>
+    git push origin <branch name>
     ./provision.sh
     OR
-    r10k deploy environment production
+    r10k deploy environment <branch name>
     service puppetmaster restart
