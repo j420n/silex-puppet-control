@@ -40,4 +40,4 @@ Silex Puppet Control
 
     ./provision.sh
 
-
+[debian8-xen]: https://github.com/j420n/vagrant-debian8.git
