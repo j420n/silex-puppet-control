@@ -77,5 +77,8 @@ mod 'mcollective',
 mod 'datacat',
     :git => 'https://github.com/richardc/puppet-datacat.git'
 
+mod 'activemq',
+    :git => 'https://github.com/puppetlabs/puppetlabs-activemq.git'
+
 
 
