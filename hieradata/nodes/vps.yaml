@@ -15,8 +15,6 @@ classes:
 
 #Only install the mcollective client.
 mcollective::client: true
-mcollective::middleware_hosts:
-    - 'debian8-xen.local.ghost'
 
 #Beluga Drupal production sites.
 beluga::drupal_sites:

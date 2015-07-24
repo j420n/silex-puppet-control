@@ -12,9 +12,8 @@ classes:
     - 'openldap::server'
     - 'phpldapadmin'
 
-mcollective::middleware: true
-mcollective::middleware_hosts:
-    - 'debian8-xen.local.ghost'
+
+
 
 
 
