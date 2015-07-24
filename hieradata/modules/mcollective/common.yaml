@@ -1,0 +1,6 @@
+---
+message: "This node is using hieradata from /modules/mcollective/common.yaml."
+
+mcollective::setting::direct_addressing: 0
+mcollective::middleware_hosts:
+    - 'debian8-xen.local.ghost'

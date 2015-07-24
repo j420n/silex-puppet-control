@@ -1,0 +1,4 @@
+---
+message: "This node is using hieradata from /modules/mcollective/debian8-xen.yaml."
+
+mcollective::middleware: true
