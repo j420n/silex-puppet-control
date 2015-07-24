@@ -8,12 +8,19 @@ hiera_include('classes')
 class profile::default {
   #This is only used to include "Dynamic configuration" created with hiera.
   notify { "The profile::default class is included by 'default'.": withpath => true }
+
 }
 
 #XEN PROFILE
 class profile::xen {
   notify { "The profile::xen class installs a few packages to get started with a Xen Linux System.": withpath => true }
   notify { "To make full use of the Xen Linux System, You will need to reboot and load the Xen kernel.":}
+
+  #Install mcollective plugins using hiera and create_resources.
+  $mcollective_plugins = hiera_hash('mcollective::plugins',undef)
+    if $mcollective_plugins{
+    create_resources ( mcollective::plugin, $mcollective_plugins )
+  }
 
   #TODO move these packages into a module.
   #Install xen-linux-system.
