@@ -27,6 +27,6 @@ beluga::drupal_sites:
        web_group: www-data
        use_make_file: true
        #The functionalality to build drupal with a drush make file is still in development.
-       make_file_path: https://raw.githubusercontent.com/j420n/silex_d7/master/distro.make
+       make_file_path: /tmp/silex_d7/distro.make
        site_aliases:
               - "www.silex-puppet-control.example"
