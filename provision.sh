@@ -15,6 +15,17 @@ fi
 #Replace incorrect sources url which is created by puppet docker module.
 #sed -i "/deb https:\/\/get.docker.com\/ubuntu docker main*/c\deb http:\/\/http.debian.net\/debian jessie-backports main" /etc/apt/sources.list.d/docker.list
 
+#Install ActiveMQ 5.11.1 manually as 5.6.0 from debian repository is broken.
+#echo >&2 "Installing ActiveMQ...";
+#cd /tmp
+#wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
+#tar -zxvf apache-activemq-5.11.1-bin.tar.gz
+#mv apache-activemq-5.11.1 /usr/local/
+#ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
+#chown -R activemq: /usr/local/apache-activemq-5.11.1/
+#ln -sf /usr/local/activemq /usr/bin/activemq
+
+
 apt-get update
 
 #Install docker.io using jessie-backports
