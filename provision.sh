@@ -23,7 +23,7 @@ fi
 #mv apache-activemq-5.11.1 /usr/local/
 #ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
 #chown -R activemq: /usr/local/apache-activemq-5.11.1/
-#ln -sf /usr/local/activemq /usr/bin/activemq
+#ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
 
 
 apt-get update
