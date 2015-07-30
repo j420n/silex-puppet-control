@@ -31,8 +31,6 @@ apt-get update
 #Install docker.io using jessie-backports
 #apt-get -t jessie-backports install "docker.io"
 
-#Clone our control repo
-cd /etc/puppet
 #Install some dependencies
 echo >&2 "Installing git-core and deep_merge.";
 apt-get install git-core hiera-eyaml -y
