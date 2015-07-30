@@ -25,6 +25,9 @@ fi
 #chown -R activemq: /usr/local/apache-activemq-5.11.1/
 #ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
 
+#Set domainname manually as vagrant will only set hostname and uses the domain of the router.
+sed -i '/127.0.1.1 debian8-xen*/d' /etc/hosts
+echo '127.0.1.1 debian8-xen.local.ghost debian8-xen' >> /etc/hosts
 
 apt-get update
 
@@ -62,6 +65,7 @@ then
 fi
 
 #Test for Puppet Master
+#Comment this out if you dont want a puppetmaster service.
 if [ ! -f /etc/init.d/puppetmaster ];
 then
    echo >&2 "Puppetmaster is required, but it is not installed.  Installing...";
@@ -69,6 +73,7 @@ then
 fi
 
 #Test for PuppetDB
+#Comment this out if you dont want a puppetdb service.
 if [ ! -d /etc/puppetdb ];
 then
     echo >&2 "PuppetDB is required, but it is not installed.  Installing...";
@@ -112,7 +117,7 @@ sed -i 's/port = 8080/port = 8980/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/# ssl-host = <host>/ssl-host = 0.0.0.0/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/# ssl-port = <port>/ssl-port = 8981/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/ssl-port = 8081/ssl-port = 8981/g' /etc/puppetdb/conf.d/jetty.ini
-echo >&2 "Does this look right?";
+echo >&2 "Do these PuppetDb settings look right?";
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-host
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-port
 
