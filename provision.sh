@@ -94,12 +94,15 @@ install_activemq() {
         if [ ! -f apache-activemq-5.11.1-bin.tar.gz ]
           then
             wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
-            gunzip -c apache-activemq-5.11.1-bin.tar.gz | tar zxvf -
+            tar -zxvf apache-activemq-5.11.1-bin.tar.gz
         fi
-        mv apache-activemq-5.11.1 /usr/local/
-        ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
-        chown -R activemq: /usr/local/apache-activemq-5.11.1/
-        ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
+        if [ -d apache-activemq-5.11.1-bin ]
+          then
+            mv apache-activemq-5.11.1 /usr/local/
+            ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
+            chown -R activemq: /usr/local/apache-activemq-5.11.1/
+            ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
+        fi
     }
 
 }
