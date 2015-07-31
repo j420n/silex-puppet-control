@@ -21,7 +21,7 @@ gem install deep_merge
 INSTALL_MASTER=true;
 INSTALL_AGENT=true;
 INSTALL_ACTIVEMQ=true;
-INSTALL_DOCKER=true;
+INSTALL_DOCKER=false;
 HOSTNAME=debian8-xen;
 DOMAINNAME=local.ghost;
 
