@@ -11,7 +11,7 @@ Silex Puppet Control
 
     curl -O https://raw.githubusercontent.com/j420n/silex-puppet-control/<branch name>/provision.sh > provision.sh
     chmod u+x ./provision.sh
-    ./provision-dev.sh
+    ./provision.sh
 
 >To test this out you could use our [vagrant-debian8] repo which will deploy a base system for this control repo.
 >
