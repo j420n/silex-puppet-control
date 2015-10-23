@@ -1,5 +1,12 @@
 #!/bin/sh
 set -e
+HOSTNAME=ubuntu;
+DOMAINNAME=local.ghost;
+
+#Set domainname manually as vagrant will only set hostname and uses the domain of the router.
+sed -i '/127.0.1.1 */d' /etc/hosts
+echo "127.0.1.1 $HOSTNAME.$DOMAINNAME $HOSTNAME" >> /etc/hosts
+
 
 #Install Puppet Labs repositories.
 if [ ! -f puppetlabs-release-trusty.deb ];
@@ -117,6 +124,9 @@ ln -sf /etc/puppet/silex-puppet-control/environment.conf /etc/puppet/
 echo >&2 "Deploying 'VAGRANT' environment...";
 r10k deploy environment vagrant -v
 
+sed -i 's/# host = <host>/host = 127.0.1.1/g' /etc/puppetdb/conf.d/jetty.ini
+
+
 #Configure Jetty host and port for puppetdb.
 sed -i 's/# host = <host>/host = 127.0.1.1/g' /etc/puppetdb/conf.d/jetty.ini
 sed -i 's/port = 8080/port = 8980/g' /etc/puppetdb/conf.d/jetty.ini
@@ -127,8 +137,15 @@ echo >&2 "Does this look right?";
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-host
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-port
 
+#Replace servername in puppet.conf.
+sed -i "/servername = */c\servername = $(facter fqdn)" /etc/puppet/puppet.conf
+
 #Replace certname in puppet.conf.
 sed -i "/certname = */c\certname = $(facter fqdn)" /etc/puppet/puppet.conf
+
+#Replace report url and server in puppet.conf.
+sed -i "/reporturl = */c\reporturl = http://$(facter fqdn)/reports/upload" /etc/puppet/puppet.conf
+sed -i "/reportserver = */c\reportserver = $(facter fqdn)" /etc/puppet/puppet.conf
 
 if [ -f /etc/init.d/puppetmaster ];
 then
