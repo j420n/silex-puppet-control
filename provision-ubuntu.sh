@@ -34,6 +34,8 @@ gem install deep_merge
 if [ ! -d /usr/local/apache-activemq-5.11.1 ];
 then
     echo >&2 "Installing ActiveMQ 5.11.1 ...";
+    useradd -M activemq
+    usermod -L activemq
     cd /tmp
     wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
     tar -zxvf apache-activemq-5.11.1-bin.tar.gz
