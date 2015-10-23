@@ -32,7 +32,7 @@ then
     tar -zxvf apache-activemq-5.11.1-bin.tar.gz
     mv apache-activemq-5.11.1 /usr/local/
     ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
-    chown -R activemq: /usr/local/apache-activemq-5.11.1/
+    chown -R activemq /usr/local/apache-activemq-5.11.1/
     ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
 fi
 
