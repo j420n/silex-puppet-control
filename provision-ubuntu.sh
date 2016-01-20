@@ -145,6 +145,9 @@ sed -i "/servername = */c\servername = $(facter fqdn)" /etc/puppet/puppet.conf
 #Replace certname in puppet.conf.
 sed -i "/certname = */c\certname = $(facter fqdn)" /etc/puppet/puppet.conf
 
+#Replace server in puppetdb.conf.
+sed -i "/server = */c\server = $(facter fqdn)" /etc/puppet/puppetdb.conf
+
 #Replace report url and server in puppet.conf.
 sed -i "/reporturl = */c\reporturl = http://$(facter fqdn)/reports/upload" /etc/puppet/puppet.conf
 sed -i "/reportserver = */c\reportserver = $(facter fqdn)" /etc/puppet/puppet.conf
