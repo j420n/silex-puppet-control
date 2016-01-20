@@ -140,7 +140,7 @@ cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-host
 cat /etc/puppetdb/conf.d/jetty.ini | grep ssl-port
 
 #Replace servername in puppet.conf.
-sed -i "/servername = */c\servername = $(facter fqdn)" /etc/puppet/puppet.conf
+sed -i "/server = */c\server = $(facter fqdn)" /etc/puppet/puppet.conf
 
 #Replace certname in puppet.conf.
 sed -i "/certname = */c\certname = $(facter fqdn)" /etc/puppet/puppet.conf
