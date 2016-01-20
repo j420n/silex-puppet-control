@@ -30,18 +30,18 @@ apt-get install git-core -y
 apt-get install ruby -y
 gem install deep_merge
 
-#Install ActiveMQ 5.11.1 manually as 5.6.0 from ubuntu repository is broken.
-if [ ! -d /usr/local/apache-activemq-5.11.1 ];
+#Install ActiveMQ 5.11.2 manually as 5.6.0 from ubuntu repository is broken.
+if [ ! -d /usr/local/apache-activemq-5.11.2 ];
 then
-    echo >&2 "Installing ActiveMQ 5.11.1 ...";
+    echo >&2 "Installing ActiveMQ 5.11.2 ...";
     useradd -M activemq
     usermod -L activemq
     cd /tmp
-    wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
-    tar -zxvf apache-activemq-5.11.1-bin.tar.gz
-    mv apache-activemq-5.11.1 /usr/local/
-    ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
-    chown -R activemq /usr/local/apache-activemq-5.11.1/
+    wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.2/apache-activemq-5.11.2-bin.tar.gz
+    tar -zxvf apache-activemq-5.11.2-bin.tar.gz
+    mv apache-activemq-5.11.2 /usr/local/
+    ln -sf /usr/local/apache-activemq-5.11.2 /usr/local/activemq
+    chown -R activemq /usr/local/apache-activemq-5.11.2/
     ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
 fi
 
