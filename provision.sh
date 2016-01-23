@@ -87,20 +87,20 @@ install_docker() {
 }
 
 install_activemq() {
-    #Install ActiveMQ 5.11.1 manually as 5.6.0 from debian repository is broken.
+    #Install ActiveMQ 5.11.2 manually as 5.6.0 from debian repository is broken.
     command -v activemq >/dev/null 2>&1 || {
         echo >&2 "Installing ActiveMQ...";
         cd /tmp
-        if [ ! -f apache-activemq-5.11.1-bin.tar.gz ]
+        if [ ! -f apache-activemq-5.11.2-bin.tar.gz ]
           then
-            wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
-            tar -zxvf apache-activemq-5.11.1-bin.tar.gz
+            wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.2/apache-activemq-5.11.2-bin.tar.gz
+            tar -zxvf apache-activemq-5.11.2-bin.tar.gz
         fi
-        if [ -d apache-activemq-5.11.1-bin ]
+        if [ -d apache-activemq-5.11.2-bin ]
           then
-            mv apache-activemq-5.11.1 /usr/local/
-            ln -sf /usr/local/apache-activemq-5.11.1 /usr/local/activemq
-            chown -R activemq: /usr/local/apache-activemq-5.11.1/
+            mv apache-activemq-5.11.2 /usr/local/
+            ln -sf /usr/local/apache-activemq-5.11.2 /usr/local/activemq
+            chown -R activemq: /usr/local/apache-activemq-5.11.2/
             ln -sf /usr/local/activemq/bin/activemq /usr/bin/activemq
         fi
     }
